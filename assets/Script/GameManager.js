@@ -1,6 +1,6 @@
 var InputConfig = require('InputConfig');
 var GameState = require('GameState');
-
+var Tutorial = require("Tutorial");
 var GameManager = require("GameManager");
 var GameManager = cc.Class({
     extends: cc.Component,
@@ -37,6 +37,9 @@ var GameManager = cc.Class({
         switch (this.gameState) {
             case GameState.player:
                 this.player.processKeyUp(event);
+                break;
+            case GameState.tutorial:
+                Tutorial.inst.processKeyUp(event);
                 break;
         }
     },

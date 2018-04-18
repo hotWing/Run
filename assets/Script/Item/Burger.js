@@ -1,6 +1,7 @@
 var HealthBar = require("HealthBar");
 var GameManager = require("GameManager");
-var ScrollBg = require("ScrollBg");
+var Tutorial = require("Tutorial");
+var GameState = require('GameState');
 
 cc.Class({
     extends: cc.Component,
@@ -18,7 +19,9 @@ cc.Class({
         if (!GameManager.inst.hpTutShown)
         {
             cc.director.pause();
-            GameManager.inst.hpTutShown = true
+            Tutorial.inst.showHp();
+            GameManager.inst.hpTutShown = true;
+            GameManager.inst.gameState = GameState.tutorial;
         }
     },
 });

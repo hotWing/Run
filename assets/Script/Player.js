@@ -43,7 +43,6 @@ var Player = cc.Class({
     processKeyUp(event) {
         switch (event.keyCode) {
             case InputConfig.dpadCenter:
-            cc.log("sdadsadsadsa");
                 if (this.isUp) {
                     this.node.position = this.downPos;
                     this.isUp = false;
