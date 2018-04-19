@@ -4600,7 +4600,33 @@
     "node": {
       "__id__": 117
     },
-    "_enabled": true
+    "_enabled": true,
+    "meterInterval": [
+      0,
+      100,
+      200
+    ],
+    "itemNum": [
+      2,
+      4,
+      6
+    ],
+    "trapProp": [
+      "0.8-0.1-0.1",
+      "0.8-0.1-0.1",
+      "0.8-0.1-0.1"
+    ],
+    "trapPrefabs": [
+      {
+        "__uuid__": "67e03d94-c4e7-44ff-9f7d-72c02a015723"
+      },
+      {
+        "__uuid__": "d3c05da1-29ee-4474-96c8-d3a257dceabc"
+      },
+      {
+        "__uuid__": "5fa4941c-2fd4-4abe-9618-03e7915adebb"
+      }
+    ]
   },
   {
     "__type__": "cc.Node",
