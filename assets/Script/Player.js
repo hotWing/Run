@@ -20,7 +20,7 @@ var Player = cc.Class({
         this.invincible = false;
         this.runAnim = this.node.getComponent(cc.Animation);
         this.ruchCallback = function () {
-            ScrollBg.inst.speed = 500;
+            ScrollBg.inst.speed = this.returnSpeed;
             this.invincible = false;
             this.runAnim.speed = 0.25;
         };
@@ -33,6 +33,7 @@ var Player = cc.Class({
             this.unschedule(this.ruchCallback);
             this.runAnim.speed = 0.75;
         }
+        this.returnSpeed =  ScrollBg.inst.speed;
         ScrollBg.inst.speed = ScrollBg.inst.rushSpeed;
         this.invincible = true;
         this.scheduleOnce(this.ruchCallback, 5);

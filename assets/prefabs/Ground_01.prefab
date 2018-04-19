@@ -565,8 +565,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 112,
-      "y": -219
+      "x": 306,
+      "y": -216
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -644,6 +644,9 @@
     "_clips": [
       {
         "__uuid__": "45f0a3c6-c1e8-467f-ade7-ff6bac6c5c0c"
+      },
+      {
+        "__uuid__": "d4ae8788-dd88-4244-aaf4-67dda1c51659"
       }
     ],
     "playOnLoad": true

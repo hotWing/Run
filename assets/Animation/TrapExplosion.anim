@@ -1,0 +1,91 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "TrapExplosion",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.18333333333333332,
+  "sample": 60,
+  "speed": 0.5,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "981e52d6-a41f-4266-94c2-2423cdc1f8ab"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "29a5f0fa-5a44-41ca-a38f-664d06e89027"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "8d702533-d88c-45d8-9d17-c97abcccdf6a"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "6df01113-8e17-45b3-8daa-7a5380e824ec"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "feaf2fc5-c717-46c8-ab26-1d2c9ff90579"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "af842118-3fc6-4b22-9488-321b6523ecdc"
+            }
+          },
+          {
+            "frame": 0.1,
+            "value": {
+              "__uuid__": "95dbfb59-bb9e-4007-8446-c25d5d485617"
+            }
+          },
+          {
+            "frame": 0.11666666666666667,
+            "value": {
+              "__uuid__": "02027f04-d202-418c-b66a-650e82790075"
+            }
+          },
+          {
+            "frame": 0.13333333333333333,
+            "value": {
+              "__uuid__": "1d659e99-06a9-44ef-886f-86a8d8e5eb82"
+            }
+          },
+          {
+            "frame": 0.15,
+            "value": {
+              "__uuid__": "2292ea3c-7fbf-4f09-871e-7ba1ecf7140a"
+            }
+          },
+          {
+            "frame": 0.16666666666666666,
+            "value": {
+              "__uuid__": "a542d647-aae4-4d3e-8403-91ade7675592"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.16666666666666666,
+      "func": "onExplosion",
+      "params": []
+    }
+  ]
+}

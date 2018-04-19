@@ -17,6 +17,7 @@ cc.Class({
 
     onCollisionEnter: function (other, self) {
         StaminaBar.inst.add(1)
+        this.node.destroy();
         if (!GameManager.inst.staminaTutShown)
         {
             cc.director.pause();

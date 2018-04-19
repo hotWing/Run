@@ -16,6 +16,7 @@ cc.Class({
 
     onCollisionEnter: function (other, self) {
         HealthBar.inst.addBurger();
+        this.node.destroy();
         if (!GameManager.inst.hpTutShown)
         {
             cc.director.pause();
