@@ -18,7 +18,7 @@ var BgPoolManager = cc.Class({
         BgPoolManager.inst = this;
         this.gap = 60;
         this.path = 1920 - this.gap * 2;
-        this.interval = this.path / 6;
+        this.interval = this.path / 4;
         this.upY = -277;
         this.downY = -408;
         // cc.log(this.trapProp[1].split("-"));
@@ -61,7 +61,7 @@ var BgPoolManager = cc.Class({
         var curItemNum = this.itemNum[i];
         var curTrapProps = this.trapProp[i].split("-");
 
-        var randomNums = this.getRandomNums(curItemNum, 6)
+        var randomNums = this.getRandomNums(curItemNum, 4)
         randomNums.forEach(num => {
             var x = this.gap + num * this.interval - 960;
             var y = num % 2 == 0 ? this.upY : this.downY;

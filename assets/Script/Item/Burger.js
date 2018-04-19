@@ -10,7 +10,7 @@ cc.Class({
     properties: {
 
     },
-
+    
     start() {
 
     },

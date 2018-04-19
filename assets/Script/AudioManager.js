@@ -10,6 +10,7 @@ var AudioManager = cc.Class({
         bg: cc.AudioClip,
         over: cc.AudioClip,
         trap: cc.AudioClip,
+        boom: cc.AudioClip,
     },
 
     statics: {
@@ -47,9 +48,13 @@ var AudioManager = cc.Class({
     playOver() {
         cc.audioEngine.playEffect(this.over);
     },
-    
+
     playTrap() {
         cc.audioEngine.playEffect(this.trap);
+    },
+
+    playBoom() {
+        cc.audioEngine.playEffect(this.boom);
     },
 
 });

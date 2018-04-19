@@ -2,6 +2,7 @@ var InputConfig = require('InputConfig');
 var ScrollBg = require("ScrollBg");
 var Player = require("Player");
 var AudioManager = require("AudioManager");
+var PickItemEff = require("PickItemEff");
 
 var Player = cc.Class({
     extends: cc.Component,
@@ -73,10 +74,12 @@ var Player = cc.Class({
         switch (event.keyCode) {
             case InputConfig.dpadCenter:
                 if (this.isUp) {
+                    PickItemEff.inst.node.position = this.downPos;
                     this.node.position = this.downPos;
                     this.isUp = false;
                 }
                 else {
+                    PickItemEff.inst.node.position = this.upPos;
                     this.node.position = this.upPos;
                     this.isUp = true;
                 }

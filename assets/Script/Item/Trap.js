@@ -16,7 +16,7 @@ cc.Class({
 
     onCollisionEnter: function (other, self) {
         if (!Player.inst.invincible) {
-            AudioManager.inst.playTrap();
+            AudioManager.inst.playBoom();
             this.explosionAnim.play("TrapExplosion");
             ScrollBg.inst.speed = ScrollBg.inst.defaultSpeed;
             HealthBar.inst.subHp(3);

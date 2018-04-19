@@ -1,0 +1,49 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "PickItemEff",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.06666666666666667,
+  "sample": 60,
+  "speed": 0.25,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0ebef126-97fb-4983-a667-26f2f0ace77b"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "d4f966f7-474a-4d94-b530-277b1c788d08"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "fe3b2d0a-e609-4061-b215-87ab5373dde0"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "955cdd22-959c-4dc6-a6aa-56d0d529be7d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 0.05,
+      "func": "onAnimFinished",
+      "params": []
+    }
+  ]
+}

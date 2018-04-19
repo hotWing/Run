@@ -5,6 +5,7 @@ var Tutorial = require("Tutorial");
 var GameState = require('GameState');
 var AudioManager = require("AudioManager");
 var Player = require("Player");
+
 cc.Class({
     extends: cc.Component,
 

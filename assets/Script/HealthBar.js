@@ -1,5 +1,6 @@
 var HealthBar = require("HealthBar");
 var AudioManager = require("AudioManager");
+var PickItemEff = require("PickItemEff");
 
 var HealthBar = cc.Class({
     extends: cc.Component,
@@ -58,6 +59,7 @@ var HealthBar = cc.Class({
             {
                 AudioManager.inst.playHpRecover();
                 this.addHp(1);
+                PickItemEff.inst.play();
             }
         }
     },

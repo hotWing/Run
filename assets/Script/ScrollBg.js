@@ -19,8 +19,8 @@ var ScrollBg = cc.Class({
 
     init() {
         ScrollBg.inst = this;
-        this.bg1 = this.node.children[1];
-        this.bg2 = this.node.children[2];
+        this.bg1 = this.node.children[2];
+        this.bg2 = this.node.children[3];
         this.bgQueue = [this.bg1, this.bg2];
         this.defaultSpeed = this.speed;
         this.inRush = false;
