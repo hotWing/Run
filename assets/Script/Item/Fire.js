@@ -16,8 +16,7 @@ cc.Class({
     onCollisionEnter: function (other, self) {
         if (!Player.inst.invincible) {
             ScrollBg.inst.speed = ScrollBg.inst.defaultSpeed;
-            HealthBar.inst.subHp(1);
+            HealthBar.inst.subHp(2);
         }
     },
-
 });

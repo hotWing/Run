@@ -5,7 +5,6 @@ var Player = cc.Class({
     extends: cc.Component,
 
     properties: {
-
     },
 
     statics: {
@@ -29,13 +28,12 @@ var Player = cc.Class({
 
     rush() {
         //in rush
-        if(ScrollBg.inst.speed == 1500)
+        if(ScrollBg.inst.speed == ScrollBg.inst.rushSpeed)
         {
             this.unschedule(this.ruchCallback);
             this.runAnim.speed = 0.75;
         }
-
-        ScrollBg.inst.speed = 1500;
+        ScrollBg.inst.speed = ScrollBg.inst.rushSpeed;
         this.invincible = true;
         this.scheduleOnce(this.ruchCallback, 5);
     },

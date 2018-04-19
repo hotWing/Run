@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "0e7dae2c-cb0b-4512-b4f3-30d4d77f5005",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "障碍-圆桶闪烁_02": {
+      "ver": "1.0.3",
+      "uuid": "384ed9a0-6a86-46c2-aafa-479c85452aa1",
+      "rawTextureUuid": "0e7dae2c-cb0b-4512-b4f3-30d4d77f5005",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 46,
+      "trimY": 27,
+      "width": 164,
+      "height": 202,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

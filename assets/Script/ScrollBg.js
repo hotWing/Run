@@ -7,6 +7,9 @@ var ScrollBg = cc.Class({
 
     properties: {
         speed: 100,
+        maxSpeed:1000,
+        acceleration: 1,
+        rushSpeed:1500,
         bgPrefabs: [cc.Prefab],
     },
     statics: {
@@ -17,17 +20,19 @@ var ScrollBg = cc.Class({
         ScrollBg.inst = this;
         this.bg1 = this.node.children[1];
         this.bg2 = this.node.children[2];
-        this.bgQueue = [this.bg1, this.bg2]
+        this.bgQueue = [this.bg1, this.bg2];
+        this.defaultSpeed  = this.speed;
     },
 
     update(dt) {
+        this.accelerate(dt);
         var GameManager = require("GameManager");
         if (GameManager.inst.gameStarted) {
             this.bgQueue.forEach(bg => {
                 var nextX = bg.x - this.speed * dt
                 if (nextX < -1920)
                     nextX = -1920
-                Meter.inst.updateMeter((nextX - bg.x)/100)
+                Meter.inst.updateMeter((nextX - bg.x) / 100)
                 bg.x = nextX
             });
 
@@ -40,10 +45,18 @@ var ScrollBg = cc.Class({
         }
     },
 
+    accelerate(dt) {
+        this.speed += dt * this.acceleration;
+        if (this.speed > this.maxSpeed) 
+        {
+            this.speed = this.maxSpeed;
+        }
+        cc.log(this.speed);
+    },
+
     NewBg() {
         var newBg = BgPoolManager.inst.getRandomBg(this.node)
         newBg.position = cc.v2(this.bgQueue[0].x + 1920, 0, 0)
         return newBg;
     }
-
 });

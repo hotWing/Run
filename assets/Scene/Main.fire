@@ -1288,6 +1288,9 @@
     },
     "_enabled": true,
     "speed": 500,
+    "maxSpeed": 1000,
+    "acceleration": 10,
+    "rushSpeed": 1500,
     "bgPrefabs": [
       {
         "__uuid__": "7c9b21c5-39b5-43a4-b6ef-a807048c2b93"

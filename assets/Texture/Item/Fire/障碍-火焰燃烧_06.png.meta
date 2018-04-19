@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "d5ce2137-51fd-4a71-960f-8128fa1cb1bf",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "障碍-火焰燃烧_06": {
+      "ver": "1.0.3",
+      "uuid": "e975a795-ff82-4f94-b360-d58d9dfa8fdd",
+      "rawTextureUuid": "d5ce2137-51fd-4a71-960f-8128fa1cb1bf",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -3.5,
+      "trimX": 33,
+      "trimY": 7,
+      "width": 190,
+      "height": 249,
+      "rawWidth": 256,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

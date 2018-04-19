@@ -19,28 +19,39 @@ var GameManager = cc.Class({
         manager.enabled = true;
 
         this.gameState = GameState.player;
-        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyUp, this);
+        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyRelease, this);
         this.player = cc.find("/Canvas/Player").getComponent("Player");
         this.gameStarted = true;
         this.scrollBg.init();
 
         this.hpTutShown = false;
         this.staminaTutShown = false;
+        this.keyPressed = false;
     },
 
     onKeyUp: function (event) {
-        if (event.keyCode == InputConfig.back) {
-            console.log("Quit Game!");
-            cc.game.end();
-        }
+        if(!this.keyPressed)
+        {
+            this.keyPressed = true;
 
-        switch (this.gameState) {
-            case GameState.player:
-                this.player.processKeyUp(event);
-                break;
-            case GameState.tutorial:
-                Tutorial.inst.processKeyUp(event);
-                break;
+            if (event.keyCode == InputConfig.back) {
+                console.log("Quit Game!");
+                cc.game.end();
+            }
+    
+            switch (this.gameState) {
+                case GameState.player:
+                    this.player.processKeyUp(event);
+                    break;
+                case GameState.tutorial:
+                    Tutorial.inst.processKeyUp(event);
+                    break;
+            }
         }
     },
+
+    onKeyRelease() {
+        this.keyPressed = false;
+    }
 });
