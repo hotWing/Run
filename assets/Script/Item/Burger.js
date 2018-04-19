@@ -2,6 +2,7 @@ var HealthBar = require("HealthBar");
 var GameManager = require("GameManager");
 var Tutorial = require("Tutorial");
 var GameState = require('GameState');
+var AudioManager = require("AudioManager");
 
 cc.Class({
     extends: cc.Component,
@@ -15,6 +16,7 @@ cc.Class({
     },
 
     onCollisionEnter: function (other, self) {
+        AudioManager.inst.playItem();
         HealthBar.inst.addBurger();
         this.node.destroy();
         if (!GameManager.inst.hpTutShown)

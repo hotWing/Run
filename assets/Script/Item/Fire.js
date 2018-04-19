@@ -1,6 +1,7 @@
 var HealthBar = require("HealthBar");
 var Player = require("Player");
 var ScrollBg = require("ScrollBg");
+var AudioManager = require("AudioManager");
 
 cc.Class({
     extends: cc.Component,
@@ -19,6 +20,9 @@ cc.Class({
             
             ScrollBg.inst.speed = ScrollBg.inst.defaultSpeed;
             HealthBar.inst.subHp(2);
+            AudioManager.inst.playTrap();
+            Player.inst.hurt();
+            
         }
     },
 });

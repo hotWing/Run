@@ -3,6 +3,7 @@ var StaminaBar = require("StaminaBar");
 var GameManager = require("GameManager");
 var Tutorial = require("Tutorial");
 var GameState = require('GameState');
+var AudioManager = require("AudioManager");
 
 cc.Class({
     extends: cc.Component,
@@ -16,6 +17,7 @@ cc.Class({
     },
 
     onCollisionEnter: function (other, self) {
+        AudioManager.inst.playItem();
         StaminaBar.inst.add(1)
         this.node.destroy();
         if (!GameManager.inst.staminaTutShown)

@@ -1,4 +1,6 @@
 var HealthBar = require("HealthBar");
+var AudioManager = require("AudioManager");
+
 var HealthBar = cc.Class({
     extends: cc.Component,
 
@@ -30,7 +32,9 @@ var HealthBar = cc.Class({
                 this.healthNodeList[i].active = false;
         }
         if(this.value <= 0)
-            cc.log("dieeeeeeeeeeeeeeeeeeeeeeeeeeee!")
+        {
+            require("GameManager").inst.gameover();
+        }
     },
 
     addHp(val) {
@@ -50,6 +54,7 @@ var HealthBar = cc.Class({
             this.burgerNumLabel.string = 0;
             if (this.value < 3) 
             {
+                AudioManager.inst.playHpRecover();
                 this.addHp(1);
             }
         }

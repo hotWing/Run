@@ -1,6 +1,8 @@
 var InputConfig = require('InputConfig');
 var ScrollBg = require("ScrollBg");
 var Player = require("Player");
+var AudioManager = require("AudioManager");
+
 var Player = cc.Class({
     extends: cc.Component,
 
@@ -27,7 +29,20 @@ var Player = cc.Class({
         };
     },
 
+    hurt()
+    {
+        this.runAnim.play("PlayerHurt");
+
+    },
+
+    onHurtFinished()
+    {
+        this.runAnim.play("Player");
+    },
+
     rush() {
+        AudioManager.inst.playRush();
+
         //in rush
         if(ScrollBg.inst.speed == ScrollBg.inst.rushSpeed)
         {
