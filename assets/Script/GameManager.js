@@ -39,9 +39,11 @@ var GameManager = cc.Class({
     startGame() {
         this.gameStarted = true;
         this.gameState = GameState.player;
+        this.player.run();
     },
 
     gameover() {
+        this.player.die();
         AudioManager.inst.stopBg();
         AudioManager.inst.playOver();
         this.gameState = GameState.gameover;

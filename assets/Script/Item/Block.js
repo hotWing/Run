@@ -18,7 +18,10 @@ cc.Class({
             AudioManager.inst.playTrap();
             ScrollBg.inst.speed = ScrollBg.inst.defaultSpeed;
             HealthBar.inst.subHp(1);
-            Player.inst.hurt();
+        }
+        else 
+        {
+            Player.inst.fly();
         }
     },
 

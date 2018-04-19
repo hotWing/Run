@@ -15,8 +15,8 @@ var Player = cc.Class({
 
     start() {
         Player.inst = this;
-        this.upPos = cc.v2(-319, -43);
-        this.downPos = cc.v2(-319, -166);
+        this.upPos = cc.v2(-319, -200);
+        this.downPos = cc.v2(-319, -330);
         this.node.position = this.upPos;
         this.isUp = true;
         this.invincible = false;
@@ -29,6 +29,15 @@ var Player = cc.Class({
         };
     },
 
+    run(){
+        this.runAnim.play("Player");
+    },
+
+    die(){
+        this.runAnim.stop();
+        this.runAnim.play("Die");
+    },
+
     hurt()
     {
         this.runAnim.play("PlayerHurt");
@@ -38,6 +47,10 @@ var Player = cc.Class({
     onHurtFinished()
     {
         this.runAnim.play("Player");
+    },
+
+    fly(){
+        this.runAnim.play("Fly");
     },
 
     rush() {

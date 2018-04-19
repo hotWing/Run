@@ -20,7 +20,10 @@ cc.Class({
             this.explosionAnim.play("TrapExplosion");
             ScrollBg.inst.speed = ScrollBg.inst.defaultSpeed;
             HealthBar.inst.subHp(3);
-            Player.inst.hurt();
+        }
+        else 
+        {
+            Player.inst.fly();
         }
     },
 

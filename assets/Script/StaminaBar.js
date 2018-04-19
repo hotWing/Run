@@ -17,7 +17,7 @@ var StaminaBar = cc.Class({
             this.node.children[2],
         ]
         this.value = 0;
-        this.add(0); 
+        this.add(0);
     },
 
     add(val) {
@@ -28,13 +28,20 @@ var StaminaBar = cc.Class({
             else
                 this.staminaNodeList[i].active = false;
         }
-        if (this.value >= 3)
-        {
+        if (this.value >= 3) {
             Player.inst.rush();
             this.value = 0;
-            for (let i = 0; i < this.staminaNodeList.length; i++) {
-                    this.staminaNodeList[i].active = false;
-            }
+
+            // 以秒为单位的时间间隔
+            var interval = 0.2;
+            // 重复次数
+            var repeat = 2;
+            // 开始延时
+            var delay = 0.5;
+            var i = 2
+            this.schedule(function () {
+                this.staminaNodeList[i--].active = false;
+            }, interval, repeat, delay);
         }
     }
 });

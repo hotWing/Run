@@ -35,6 +35,8 @@ var HealthBar = cc.Class({
         {
             require("GameManager").inst.gameover();
         }
+        else 
+            require("Player").inst.hurt();
     },
 
     addHp(val) {

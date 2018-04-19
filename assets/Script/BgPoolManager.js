@@ -6,7 +6,7 @@ var BgPoolManager = cc.Class({
         meterInterval: [cc.Integer],
         itemNum: [cc.Integer],
         trapProp: [cc.String],
-
+        bgProp: [cc.Float],
         trapPrefabs: [cc.Prefab],
     },
 
@@ -19,8 +19,8 @@ var BgPoolManager = cc.Class({
         this.gap = 60;
         this.path = 1920 - this.gap * 2;
         this.interval = this.path / 6;
-        this.upY = -104;
-        this.downY = -216;
+        this.upY = -277;
+        this.downY = -408;
         // cc.log(this.trapProp[1].split("-"));
     },
 
@@ -29,11 +29,17 @@ var BgPoolManager = cc.Class({
         this.node.children.forEach(bgPoolNode => {
             this.bgPoolList.push(bgPoolNode.getComponent("BgPool"));
         });
-        cc.log(this.bgPoolList.length)
     },
 
     getRandomBg(parent) {
-        var i = Math.floor((Math.random() * this.bgPoolList.length));
+        var i = null;
+        var n = Math.random();
+        if (n < this.bgProp[0])
+            i = 0;
+        else if ((n < (this.bgProp[0] + this.bgProp[1])))
+            i = 1;
+        else
+            i = 2;
         var randomPool = this.bgPoolList[i];
         var bg = randomPool.create(parent);
         this.addRandomItem(bg);
@@ -51,7 +57,6 @@ var BgPoolManager = cc.Class({
                 i = j;
         }
 
-        cc.log(i);
 
         var curItemNum = this.itemNum[i];
         var curTrapProps = this.trapProp[i].split("-");
@@ -62,7 +67,7 @@ var BgPoolManager = cc.Class({
             var y = num % 2 == 0 ? this.upY : this.downY;
             var trapNode = this.getTrap(curTrapProps);
             trapNode.parent = bg;
-            trapNode.position = cc.v2(x,y);
+            trapNode.position = cc.v2(x, y);
         });
     },
 
@@ -71,8 +76,7 @@ var BgPoolManager = cc.Class({
         var n = Math.random();
         if (n < parseFloat(curTrapProps[0]))
             prefab = this.trapPrefabs[0];
-        else if (n < (parseFloat(curTrapProps[0]) + parseFloat(curTrapProps[1])))
-        {
+        else if (n < (parseFloat(curTrapProps[0]) + parseFloat(curTrapProps[1]))) {
             prefab = this.trapPrefabs[1];
         }
         else
