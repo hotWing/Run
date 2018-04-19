@@ -69,10 +69,12 @@ var BgPoolManager = cc.Class({
     getTrap(curTrapProps) {
         var prefab = null;
         var n = Math.random();
-        if (n < curTrapProps[0])
+        if (n < parseFloat(curTrapProps[0]))
             prefab = this.trapPrefabs[0];
-        else if (n < (curTrapProps[0] + curTrapProps[1]))
+        else if (n < (parseFloat(curTrapProps[0]) + parseFloat(curTrapProps[1])))
+        {
             prefab = this.trapPrefabs[1];
+        }
         else
             prefab = this.trapPrefabs[2];
         return cc.instantiate(prefab);
