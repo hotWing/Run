@@ -23,6 +23,7 @@ var Player = cc.Class({
             ScrollBg.inst.speed = this.returnSpeed;
             this.invincible = false;
             this.runAnim.speed = 0.25;
+            ScrollBg.inst.inRush = false;
         };
     },
 
@@ -33,6 +34,7 @@ var Player = cc.Class({
             this.unschedule(this.ruchCallback);
             this.runAnim.speed = 0.75;
         }
+        ScrollBg.inst.inRush = true;
         this.returnSpeed =  ScrollBg.inst.speed;
         ScrollBg.inst.speed = ScrollBg.inst.rushSpeed;
         this.invincible = true;

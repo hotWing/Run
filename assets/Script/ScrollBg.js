@@ -23,10 +23,13 @@ var ScrollBg = cc.Class({
         this.bg2 = this.node.children[2];
         this.bgQueue = [this.bg1, this.bg2];
         this.defaultSpeed  = this.speed;
+        this.inRush = false;
     },
 
     update(dt) {
         this.accelerate(dt);
+        cc.log(this.speed);
+        
         var GameManager = require("GameManager");
         if (GameManager.inst.gameStarted) {
             this.bgQueue.forEach(bg => {
@@ -47,12 +50,14 @@ var ScrollBg = cc.Class({
     },
 
     accelerate(dt) {
-        this.speed += dt * this.acceleration;
-        if (this.speed > this.maxSpeed) 
+        if(!this.inRush)
         {
-            this.speed = this.maxSpeed;
+            this.speed += dt * this.acceleration;
+            if (this.speed > this.maxSpeed) 
+            {
+                this.speed = this.maxSpeed;
+            }
         }
-        cc.log(this.speed);
     },
 
     NewBg() {
