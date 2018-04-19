@@ -36,7 +36,7 @@ var Player = cc.Class({
         this.returnSpeed =  ScrollBg.inst.speed;
         ScrollBg.inst.speed = ScrollBg.inst.rushSpeed;
         this.invincible = true;
-        this.scheduleOnce(this.ruchCallback, 5);
+        this.scheduleOnce(this.ruchCallback, ScrollBg.inst.rushTime);
     },
 
     processKeyUp(event) {

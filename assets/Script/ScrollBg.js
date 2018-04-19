@@ -10,6 +10,7 @@ var ScrollBg = cc.Class({
         maxSpeed:1000,
         acceleration: 1,
         rushSpeed:1500,
+        rushTime:5,
         bgPrefabs: [cc.Prefab],
     },
     statics: {
